@@ -57,8 +57,9 @@ jobs:
         run: npm install
       
       - name: Code coverage
-        run: npm run coverage
         continue-on-error: true
+        run: npm run coverage
+        
 
       - name: Code-Coverage-Result
         uses: actions/upload-artifact@v4
@@ -66,6 +67,7 @@ jobs:
           name: Code-Coverage-Result
           path: coverage
           retention-days: 5
+
 
 
 
