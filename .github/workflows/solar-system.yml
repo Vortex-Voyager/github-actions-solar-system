@@ -97,7 +97,8 @@ jobs:
           with:
             context: .  #Dockerfile is in root dir so . is used
             push: true  # false will build image but not push 
-            tags: ghcr.io/${{ github.repository_owner}}/solar-system:${{github.sha}}
+            tags: ghcr.io/${{ toLower(github.repository_owner) }}/solar-system:${{github.sha}}
+
 
 
 
