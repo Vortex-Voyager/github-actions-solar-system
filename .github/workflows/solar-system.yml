@@ -81,6 +81,9 @@ jobs:
       name: containerization
       runs-on: ubuntu-latest
       needs: [ unit-testing, code-coverage ]
+      permissions:
+        packages: write
+        
       steps:
         - name: checkout repo
           uses: actions/checkout@v4
@@ -98,6 +101,7 @@ jobs:
             context: .  #Dockerfile is in root dir so . is used
             push: true  # false will build image but not push 
             tags: ghcr.io/vortex-voyager/solar-system:${{github.sha}}
+
 
 
 
