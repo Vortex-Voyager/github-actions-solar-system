@@ -29,7 +29,7 @@ jobs:
           uses: actions/cache@v4.3.0
           with:
             path: ~/.npm
-            key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+            key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
           
     
         - name: Install Dependencies
@@ -75,6 +75,7 @@ jobs:
           name: Code-Coverage-Result
           path: coverage
           retention-days: 5
+
 
 
 
