@@ -104,7 +104,7 @@ jobs:
           with:
             context: .  #Dockerfile is in root dir so . is used
             push: true  # false will build image but not push 
-            tags: ghcr.io/vortex-voyager/solar-system:${{github.sha}}
+            tags: ghcr.io/${{ REPO_OWNER_LC }}/solar-system:${{github.sha}}
 
 
     dev-deploy:
@@ -132,6 +132,7 @@ jobs:
             echo "kubectl returned $?"
             kubectl -n default get pod
             sleep 10
+
 
 
 
