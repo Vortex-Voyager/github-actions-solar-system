@@ -133,6 +133,14 @@ jobs:
             kubectl -n default get pod
             sleep 10
 
+    
+    dev-integration-test:
+      name: Integration Testing
+      needs: dev-deploy
+      uses: ./.github/workflows/reusable-workflow.yml
+
+
+
 
 
 
